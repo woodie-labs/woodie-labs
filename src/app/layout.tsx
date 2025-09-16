@@ -2,7 +2,7 @@ import React, { JSX } from 'react';
 import type { Metadata } from 'next';
 import { ASSET_PATHS } from '@/lib/constants/paths';
 import CustomQueryClientProvider from '@/components/providers/QueryClientProvider';
-import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
+import { SidebarProvider } from '@/components/ui/sidebar';
 import { SideMenuBar } from '@/components/organisms/SideMenuBar';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 

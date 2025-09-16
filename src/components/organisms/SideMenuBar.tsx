@@ -30,7 +30,7 @@ export const SideMenuBar = () => {
                 >
                   <SidebarMenuItem>
                     <CollapsibleTrigger asChild>
-                      <SidebarMenuButton className="font-bold ">
+                      <SidebarMenuButton className="font-bold hover:text-primaryColor hover:bg-transparent">
                         {menu.title}
                         <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
                       </SidebarMenuButton>
@@ -40,7 +40,7 @@ export const SideMenuBar = () => {
                         <SidebarMenuSub key={sub.title}>
                           <SidebarMenuSubItem>
                             <SidebarMenuSubButton asChild>
-                              <a href={sub.url} className="hover:!bg-transparent">
+                              <a href={sub.url} className="hover:bg-transparent">
                                 <span className="hover:text-primaryColor">{sub.title}</span>
                               </a>
                             </SidebarMenuSubButton>
