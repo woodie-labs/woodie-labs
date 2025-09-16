@@ -30,7 +30,7 @@ export const SideMenuBar = () => {
                 >
                   <SidebarMenuItem>
                     <CollapsibleTrigger asChild>
-                      <SidebarMenuButton className="font-bold hover:text-primaryColor hover:bg-transparent">
+                      <SidebarMenuButton className="font-bold">
                         {menu.title}
                         <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
                       </SidebarMenuButton>
@@ -55,6 +55,7 @@ export const SideMenuBar = () => {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      https://devtoys.app/ https://tinywow.com/
     </Sidebar>
   );
 };
