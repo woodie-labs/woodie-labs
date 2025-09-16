@@ -8,6 +8,7 @@ import { ThemeProvider } from '@/components/providers/ThemeProvider';
 
 import '@/styles/globals.css';
 import '@/styles/reset.css';
+import { Header } from '@/components/organisms/Header';
 
 export const metadata: Metadata = {
   title: 'Woodie Labs',
@@ -47,11 +48,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
             disableTransitionOnChange
           >
             <SidebarProvider>
+              <Header />
               <SideMenuBar />
-              <main className="w-full">
-                <SidebarTrigger />
-                {children}
-              </main>
+              <main className="w-full mt-[69px] p-7">{children}</main>
             </SidebarProvider>
           </ThemeProvider>
         </CustomQueryClientProvider>

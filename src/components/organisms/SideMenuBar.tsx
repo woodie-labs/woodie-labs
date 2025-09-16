@@ -18,19 +18,19 @@ import { TSidebarMenu } from '@/types/menu';
 export const SideMenuBar = () => {
   return (
     <Sidebar>
-      <SidebarContent>
+      <SidebarContent className="bg-accent pt-20">
         <SidebarGroup>
           <SidebarGroupContent>
             <SidebarMenu>
               {SIDEBAR_MENU_ITEMS.map((menu: TSidebarMenu) => (
                 <Collapsible
                   defaultOpen={menu.defaultOpen || false}
-                  className="group/collapsible"
+                  className="group/collapsible my-1"
                   key={menu.title}
                 >
                   <SidebarMenuItem>
                     <CollapsibleTrigger asChild>
-                      <SidebarMenuButton>
+                      <SidebarMenuButton className="font-bold ">
                         {menu.title}
                         <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
                       </SidebarMenuButton>
@@ -40,8 +40,8 @@ export const SideMenuBar = () => {
                         <SidebarMenuSub key={sub.title}>
                           <SidebarMenuSubItem>
                             <SidebarMenuSubButton asChild>
-                              <a href={sub.url}>
-                                <span>{sub.title}</span>
+                              <a href={sub.url} className="hover:!bg-transparent">
+                                <span className="hover:text-primaryColor">{sub.title}</span>
                               </a>
                             </SidebarMenuSubButton>
                           </SidebarMenuSubItem>
