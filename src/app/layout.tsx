@@ -2,6 +2,8 @@ import React, { JSX } from 'react';
 import type { Metadata } from 'next';
 import { ASSET_PATHS } from '@/lib/constants/paths';
 import CustomQueryClientProvider from '@/components/providers/QueryClientProvider';
+import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
+import { SideMenuBar } from '@/components/organisms/SideMenuBar';
 
 import '@/styles/globals.css';
 import '@/styles/reset.css';
@@ -36,8 +38,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
   return (
     <html lang="en">
       <body>
-        <CustomQueryClientProvider>{children}</CustomQueryClientProvider>
-
+        <CustomQueryClientProvider>
+          <SidebarProvider>
+            <SideMenuBar />
+            <main>
+              <SidebarTrigger />
+              {children}
+            </main>
+          </SidebarProvider>
+        </CustomQueryClientProvider>
         <div id="root-portal" />
       </body>
     </html>
