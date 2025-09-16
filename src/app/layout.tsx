@@ -2,6 +2,12 @@ import React, { JSX } from 'react';
 import type { Metadata } from 'next';
 import { ASSET_PATHS } from '@/lib/constants/paths';
 import CustomQueryClientProvider from '@/components/providers/QueryClientProvider';
+import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
+import { SideMenuBar } from '@/components/organisms/SideMenuBar';
+import { ThemeProvider } from '@/components/providers/ThemeProvider';
+
+import '@/styles/globals.css';
+import '@/styles/reset.css';
 
 export const metadata: Metadata = {
   title: 'Woodie Labs',
@@ -31,10 +37,24 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
   return (
-    <html lang="en">
-      <body className="relative flex min-h-screen flex-col font-nanumSquareNeo">
-        <CustomQueryClientProvider>{children}</CustomQueryClientProvider>
-
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <CustomQueryClientProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <SidebarProvider>
+              <SideMenuBar />
+              <main className="w-full">
+                <SidebarTrigger />
+                {children}
+              </main>
+            </SidebarProvider>
+          </ThemeProvider>
+        </CustomQueryClientProvider>
         <div id="root-portal" />
       </body>
     </html>
