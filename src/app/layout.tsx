@@ -41,7 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
         <CustomQueryClientProvider>
           <SidebarProvider>
             <SideMenuBar />
-            <main>
+            <main className="w-full">
               <SidebarTrigger />
               {children}
             </main>
