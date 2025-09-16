@@ -4,6 +4,7 @@ import { ASSET_PATHS } from '@/lib/constants/paths';
 import CustomQueryClientProvider from '@/components/providers/QueryClientProvider';
 import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import { SideMenuBar } from '@/components/organisms/SideMenuBar';
+import { ThemeProvider } from '@/components/providers/ThemeProvider';
 
 import '@/styles/globals.css';
 import '@/styles/reset.css';
@@ -36,16 +37,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
         <CustomQueryClientProvider>
-          <SidebarProvider>
-            <SideMenuBar />
-            <main className="w-full">
-              <SidebarTrigger />
-              {children}
-            </main>
-          </SidebarProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <SidebarProvider>
+              <SideMenuBar />
+              <main className="w-full">
+                <SidebarTrigger />
+                {children}
+              </main>
+            </SidebarProvider>
+          </ThemeProvider>
         </CustomQueryClientProvider>
         <div id="root-portal" />
       </body>
