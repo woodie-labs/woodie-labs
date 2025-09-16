@@ -3,6 +3,9 @@ import type { Metadata } from 'next';
 import { ASSET_PATHS } from '@/lib/constants/paths';
 import CustomQueryClientProvider from '@/components/providers/QueryClientProvider';
 
+import '@/styles/globals.css';
+import '@/styles/reset.css';
+
 export const metadata: Metadata = {
   title: 'Woodie Labs',
   description: 'Building small but useful tools for developers and everyday life.',
@@ -32,7 +35,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
   return (
     <html lang="en">
-      <body className="relative flex min-h-screen flex-col font-nanumSquareNeo">
+      <body>
         <CustomQueryClientProvider>{children}</CustomQueryClientProvider>
 
         <div id="root-portal" />
