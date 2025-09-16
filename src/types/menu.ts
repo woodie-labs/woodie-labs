@@ -3,3 +3,8 @@ export type TSidebarMenu = {
   subMenu: { title: string; url: string }[];
   defaultOpen?: boolean;
 };
+
+export type TNavigationMenu = {
+  title: string;
+  url: string;
+};

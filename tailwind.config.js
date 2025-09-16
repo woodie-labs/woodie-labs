@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    darkMode: ['class'],
-    content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  darkMode: ['class'],
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
   	extend: {
   		borderRadius: {
@@ -10,6 +10,7 @@ module.exports = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
+  			primaryColor: '#f67373',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -63,5 +64,5 @@ module.exports = {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require('tailwindcss-animate')],
 };

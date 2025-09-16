@@ -1,4 +1,4 @@
-import { TSidebarMenu } from '@/types/menu';
+import { TNavigationMenu, TSidebarMenu } from '@/types/menu';
 
 export const SIDEBAR_MENU_ITEMS: TSidebarMenu[] = [
   {
@@ -43,4 +43,11 @@ export const SIDEBAR_MENU_ITEMS: TSidebarMenu[] = [
       { title: 'Focus Music Player', url: '/' },
     ],
   },
+];
+
+export const NAVIGATION_MENU_ITEMS: TNavigationMenu[] = [
+  { title: 'Favorites', url: '/' },
+  { title: 'About', url: '/' },
+  { title: 'Updates', url: '/' },
+  { title: 'Github', url: '/' },
 ];
