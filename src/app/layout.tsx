@@ -5,10 +5,11 @@ import CustomQueryClientProvider from '@/components/providers/QueryClientProvide
 import { SidebarProvider } from '@/components/ui/sidebar';
 import { SideMenuBar } from '@/components/organisms/SideMenuBar';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
+import { Header } from '@/components/organisms/Header';
+import { Toaster } from '@/components/ui/sonner';
 
 import '@/styles/globals.css';
 import '@/styles/reset.css';
-import { Header } from '@/components/organisms/Header';
 
 export const metadata: Metadata = {
   title: 'Woodie Labs',
@@ -50,11 +51,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
             <SidebarProvider>
               <Header />
               <SideMenuBar />
-              <main className="w-full mt-[69px] p-7">{children}</main>
+              <main className="w-full mt-[69px] p-12 relative">{children}</main>
+              <Toaster />
             </SidebarProvider>
           </ThemeProvider>
         </CustomQueryClientProvider>
-        <div id="root-portal" />
       </body>
     </html>
   );

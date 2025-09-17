@@ -7,7 +7,7 @@ import { SearchButton } from '@/components/molecules/SearchButton';
 
 export const Header = () => {
   return (
-    <div className="w-full bg-accent absolute top-0 z-50 flex items-center justify-between p-4 border-b">
+    <div className="w-full bg-accent fixed top-0 z-50 flex items-center justify-between p-4 border-b">
       <div className="flex items-center justify-start">
         <Logo />
         <NavigationMenuBar />

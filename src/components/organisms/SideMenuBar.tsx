@@ -55,7 +55,6 @@ export const SideMenuBar = () => {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
-      https://devtoys.app/ https://tinywow.com/
     </Sidebar>
   );
 };
